@@ -109,7 +109,7 @@ npm run dev     # terminal 2
 5. enter tip amount and send
 6. view transaction on solana explorer
 7. check "my dashboard" to see your stats, progress, and rewards
-8. every 3rd tip to the same creator earns you cashback!
+8. Both creator and supporter get 1% i.e. 0.50% each of sum total of every 3 transactions between them in rewards i.e. air-dropped in their wallets.
 
 ## project structure
 
@@ -155,8 +155,7 @@ to change the fee percentage, edit `NEXT_PUBLIC_PLATFORM_FEE_PERCENTAGE` in your
 
 ## rewards
 
-Both creators and supporters get 1% i.e. 0.50% each of total commission on every 3 transactions
-between them in rewards i.e. air-dropped in their wallets.
+Both creator and supporter get 1% i.e. 0.50% each of sum total of every 3 transactions between them in rewards i.e. air-dropped in their wallets.
 
 every 3rd tip from same supporter -> same creator triggers cashback:
 - supporter gets 0.5% reward
@@ -166,7 +165,7 @@ every 3rd tip from same supporter -> same creator triggers cashback:
 example flow:
 - tip #1: 0.1 SOL → nothing
 - tip #2: 0.1 SOL → nothing
-- tip #3: 0.1 SOL → reward! (0.3 SOL total * 0.5% = 0.0015 SOL each)
+- tip #3: 0.1 SOL → reward! (0.3 SOL total * 1% = 0.0030 SOL i.e. 0.0015 SOL each)
 - tip #4-5: nothing
 - tip #6: reward again
 
@@ -243,6 +242,6 @@ database: sqlite fine for hackathon. for prod, migrate to postgres.
 - currently on devnet (testnet), no real money
 - supporter list shows last 10 transactions per creator
 - all secrets managed via environment variables
-- platform wallet needs SOL to pay loyalty rewards
+- platform wallet needs SOL to pay rewards
 
 Submission for Solana Cypherpunk Hackathon - Colosseum (2025)
