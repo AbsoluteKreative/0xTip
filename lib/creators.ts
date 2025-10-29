@@ -22,7 +22,7 @@ export const creators: Creator[] = [
     name: "bob creates",
     description:
       "creating educational content about web3 and solana ecosystem. tips help me create more tutorials.",
-    walletAddress: "7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj",
+    walletAddress: "3UTbbRMJSq4LxQ6iCwdT7dzdRShqYAMy9bnrKgdZecef",
     goal: "new video series on solana programs",
     avatar: "🎬",
   },
@@ -31,7 +31,7 @@ export const creators: Creator[] = [
     name: "carol.art",
     description:
       "solana nft artist. creating generative art on-chain. support helps me mint more collections.",
-    walletAddress: "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH",
+    walletAddress: "C92g4XZ7A4mYa4e9Bc4HNSLZV6rTo5wGh34mdwyecSDL",
     goal: "funding next collection drop",
     avatar: "🎨",
   },
@@ -40,7 +40,7 @@ export const creators: Creator[] = [
     name: "dave.sounds",
     description:
       "making music nfts and experimenting with on-chain audio. tips go towards better equipment.",
-    walletAddress: "9n4nbM75f5Ui33ZbPYXn59EwSgE8CGsHtAeTH5YFeJ9E",
+    walletAddress: "pW1nDPAbTX9iqrzE2s1f9hRRemXBzfLTUPBL2i3nui4",
     goal: "new studio setup",
     avatar: "🎵",
   },
