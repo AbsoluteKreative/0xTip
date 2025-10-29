@@ -1,14 +1,15 @@
 # 0xTip
 
-a simple patreon/buy me a coffee style app built on solana for the hackathon.
+An onchain tipping platform with rewards for creators and supporters.
+Submission for Solana Cypherpunk Hackathon - Colosseum.
 
 ## features
 
 - connect wallet (phantom, solflare)
 - browse creator profiles
 - send SOL tips to creators (on devnet)
-- automatic fee splitting (95% creator, 5% platform)
-- loyalty rewards system (cashback on every 3rd tip)
+- automatic splitting (95% creator earnings, 5% platform fee)
+- rewards system (cashback on every 3rd tip)
 - supporter dashboard with stats and progress tracking
 - view supporter history on creator pages
 - clean, minimal ui
@@ -151,7 +152,7 @@ the split happens client-side using two transfer instructions in one transaction
 
 to change the fee percentage, edit `NEXT_PUBLIC_PLATFORM_FEE_PERCENTAGE` in your `.env` file.
 
-## loyalty rewards
+## rewards
 
 every 3rd tip from same supporter -> same creator triggers cashback:
 - supporter gets 0.5% of last 3 tips back
