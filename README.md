@@ -2,6 +2,8 @@
 
 An onchain tipping platform with rewards for creators and supporters.
 
+**Live demo env:** https://0xTip.fly.dev/
+
 Submission for Solana Cypherpunk Hackathon - Colosseum (2025)
 
 ## features
@@ -207,6 +209,7 @@ edit `lib/creators.ts` to add new creators:
 
 ## next steps for production
 
+- [ ] x402 protocol integration for content gating and AI agent tipping ([x402.org](https://www.x402.org) - coinbase's HTTP 402 payment protocol on solana, enables autonomous micropayments for AI agents accessing creator content/APIs)
 - [ ] add proper database for creator profiles
 - [ ] implement recurring subscriptions
 - [ ] add creator dashboard
