@@ -1,0 +1,32 @@
+# fly.toml app configuration file generated for 0xtip on 2025-10-28T22:52:21+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = '0xtip'
+primary_region = 'fra'
+
+[build]
+
+[env]
+  LOYALTY_REWARD_PERCENTAGE = '0.005'
+  NEXT_PUBLIC_PLATFORM_FEE_PERCENTAGE = '0.05'
+  NEXT_PUBLIC_API_URL = ''
+  SOLANA_RPC_URL = 'https://api.devnet.solana.com'
+  DB_PATH = '/data'
+
+[[mounts]]
+  source = '0xtip_data'
+  destination = '/data'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1

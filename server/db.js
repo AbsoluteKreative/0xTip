@@ -1,7 +1,17 @@
 const Database = require("better-sqlite3");
 const path = require("path");
+const fs = require("fs");
 
-const db = new Database(path.join(__dirname, "tips.db"));
+// use volume in production, local dir in dev
+const dbDir = process.env.DB_PATH || __dirname;
+const dbPath = path.join(dbDir, "tips.db");
+
+// ensure dir exists
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, { recursive: true });
+}
+
+const db = new Database(dbPath);
 
 // tips table - all transactions
 db.exec(`

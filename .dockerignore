@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.env
+.env.local
+wallets
+server/tips.db
+git-commits.sh
+notes.md
+*.local.md
+.vscode
+.idea
+npm-debug.log*

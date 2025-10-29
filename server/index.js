@@ -16,14 +16,23 @@ const SOLANA_RPC_URL = process.env.SOLANA_RPC_URL || "https://api.devnet.solana.
 const LOYALTY_REWARD_PERCENTAGE = parseFloat(process.env.LOYALTY_REWARD_PERCENTAGE || "0.005");
 const PORT = process.env.PORT || 3001;
 
-// load platform keypair
-const platformKeypairPath = path.isAbsolute(PLATFORM_WALLET_KEYPAIR_PATH)
-  ? PLATFORM_WALLET_KEYPAIR_PATH
-  : path.join(__dirname, "..", PLATFORM_WALLET_KEYPAIR_PATH);
+// load platform keypair (from env var or file)
+let platformKeypair;
+if (process.env.PLATFORM_WALLET_SECRET_KEY) {
+  // from env var (for production/fly.io)
+  platformKeypair = Keypair.fromSecretKey(
+    new Uint8Array(JSON.parse(process.env.PLATFORM_WALLET_SECRET_KEY))
+  );
+} else {
+  // from file (for local dev)
+  const platformKeypairPath = path.isAbsolute(PLATFORM_WALLET_KEYPAIR_PATH)
+    ? PLATFORM_WALLET_KEYPAIR_PATH
+    : path.join(__dirname, "..", PLATFORM_WALLET_KEYPAIR_PATH);
 
-const platformKeypair = Keypair.fromSecretKey(
-  new Uint8Array(JSON.parse(fs.readFileSync(platformKeypairPath, "utf8")))
-);
+  platformKeypair = Keypair.fromSecretKey(
+    new Uint8Array(JSON.parse(fs.readFileSync(platformKeypairPath, "utf8")))
+  );
+}
 
 console.log("✓ platform wallet loaded:", platformKeypair.publicKey.toString());
 
