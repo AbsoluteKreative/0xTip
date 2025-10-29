@@ -7,4 +7,5 @@ export const PLATFORM_WALLET = process.env.PLATFORM_WALLET || "3CDMm7U2iNF6WHU2T
 export const PLATFORM_FEE_PERCENTAGE = parseFloat(process.env.NEXT_PUBLIC_PLATFORM_FEE_PERCENTAGE || "0.05");
 
 // backend api endpoint
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+// empty string = relative URLs (proxied via next.js api routes in production)
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' ? '' : 'http://localhost:3001');
