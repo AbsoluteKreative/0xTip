@@ -49,3 +49,7 @@ export const creators: Creator[] = [
 export function getCreatorById(id: string): Creator | undefined {
   return creators.find((c) => c.id === id);
 }
+
+export function getCreatorByWallet(walletAddress: string): Creator | undefined {
+  return creators.find((c) => c.walletAddress === walletAddress);
+}

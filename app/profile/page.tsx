@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Link from "next/link";
 import WalletButton from "@/components/WalletButton";
-import { getCreatorById } from "@/lib/creators";
+import { getCreatorById, getCreatorByWallet } from "@/lib/creators";
 import { API_URL } from "@/lib/config";
 
 interface OverviewStats {
@@ -188,9 +188,7 @@ export default function ProfilePage() {
             <h2 className="text-xl font-bold text-gray-900 mb-4">creators you support</h2>
             <div className="space-y-4">
               {data.creators.map((creator) => {
-                const creatorInfo = getCreatorById(
-                  creator.creator_wallet === publicKey.toString() ? "alice-dev" : "alice-dev"
-                );
+                const creatorInfo = getCreatorByWallet(creator.creator_wallet);
                 return (
                   <div key={creator.creator_wallet} className="border border-gray-200 rounded-lg p-4">
                     <div className="flex items-start justify-between mb-3">
@@ -203,7 +201,7 @@ export default function ProfilePage() {
                         </p>
                       </div>
                       <Link
-                        href={`/creator/${creatorInfo?.id || "alice-dev"}`}
+                        href={`/creator/${creatorInfo?.id || creator.creator_wallet}`}
                         className="text-sm text-purple-600 hover:underline"
                       >
                         visit profile →
