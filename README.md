@@ -1,7 +1,8 @@
 # 0xTip
 
 An onchain tipping platform with rewards for creators and supporters.
-Submission for Solana Cypherpunk Hackathon - Colosseum.
+
+Submission for Solana Cypherpunk Hackathon - Colosseum (2025)
 
 ## features
 
@@ -154,9 +155,12 @@ to change the fee percentage, edit `NEXT_PUBLIC_PLATFORM_FEE_PERCENTAGE` in your
 
 ## rewards
 
+Both creators and supporters get 1% i.e. 0.50% each of total commission on every 3 transactions
+between them in rewards i.e. air-dropped in their wallets.
+
 every 3rd tip from same supporter -> same creator triggers cashback:
-- supporter gets 0.5% of last 3 tips back
-- creator gets 0.5% bonus
+- supporter gets 0.5% reward
+- creator gets 0.5% reward
 - paid from platform wallet (our collected fees)
 
 example flow:
@@ -241,4 +245,4 @@ database: sqlite fine for hackathon. for prod, migrate to postgres.
 - all secrets managed via environment variables
 - platform wallet needs SOL to pay loyalty rewards
 
-built for solana hackathon 2025
+Submission for Solana Cypherpunk Hackathon - Colosseum (2025)
