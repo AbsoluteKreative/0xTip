@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCreatorById } from "@/lib/creators";
-import WalletButton from "@/components/WalletButton";
+import Header from "@/components/Header";
 import TipButton from "@/components/TipButton";
 import SupporterList from "@/components/SupporterList";
 
@@ -19,27 +18,7 @@ export default async function CreatorPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <Link
-              href="/"
-              className="text-2xl font-bold text-gray-900 hover:text-gray-700"
-            >
-              ← 0xTip
-            </Link>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/profile"
-                className="text-sm text-gray-700 hover:text-gray-900 font-medium"
-              >
-                my dashboard
-              </Link>
-              <WalletButton />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header showBackButton={true} showDashboardLink={true} />
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg border border-gray-200 p-8 mb-6">

@@ -1,26 +1,11 @@
 import Link from "next/link";
 import { creators } from "@/lib/creators";
-import WalletButton from "@/components/WalletButton";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">0xTip</h1>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/profile"
-                className="text-sm text-gray-700 hover:text-gray-900 font-medium"
-              >
-                my dashboard
-              </Link>
-              <WalletButton />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header showDashboardLink={true} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">

@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Link from "next/link";
+import Image from "next/image";
+import Header from "@/components/Header";
 import WalletButton from "@/components/WalletButton";
 import { getCreatorById, getCreatorByWallet } from "@/lib/creators";
 import { API_URL } from "@/lib/config";
@@ -80,16 +82,7 @@ export default function ProfilePage() {
   if (!publicKey) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <header className="bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-gray-700">
-                ← 0xTip
-              </Link>
-              <WalletButton />
-            </div>
-          </div>
-        </header>
+        <Header showBackButton={true} />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">supporter dashboard</h1>
@@ -104,16 +97,7 @@ export default function ProfilePage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <header className="bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-gray-700">
-                ← 0xTip
-              </Link>
-              <WalletButton />
-            </div>
-          </div>
-        </header>
+        <Header showBackButton={true} />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <p className="text-center text-gray-600">loading your stats...</p>
         </main>
@@ -124,16 +108,7 @@ export default function ProfilePage() {
   if (!data) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <header className="bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-gray-700">
-                ← 0xTip
-              </Link>
-              <WalletButton />
-            </div>
-          </div>
-        </header>
+        <Header showBackButton={true} />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <p className="text-center text-red-600">failed to load dashboard data</p>
         </main>
@@ -143,16 +118,7 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-gray-700">
-              ← 0xTip
-            </Link>
-            <WalletButton />
-          </div>
-        </div>
-      </header>
+      <Header showBackButton={true} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">supporter dashboard</h1>
