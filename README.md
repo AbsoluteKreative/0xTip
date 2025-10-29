@@ -15,19 +15,28 @@ Submission for Solana Cypherpunk Hackathon - Colosseum (2025)
 - view supporter history on creator pages
 - clean, minimal ui
 
+## blockchain architecture
+
+**current implementation:**
+- atomic multi-instruction transactions (both transfers succeed or both fail)
+- on-chain transaction verification
+- transparent, immutable tip history on Solana
+- cryptographic signatures for all transfers
+- decentralized tip records (anyone can verify on explorer)
+
 ## tech stack
 
 **frontend:**
+- solana web3.js
+- wallet-adapter (react)
 - next.js 16 (app router)
 - typescript
 - tailwind css
-- solana web3.js
-- wallet-adapter (react)
 
 **backend:**
+- solana web3.js (for reward transactions)
 - express.js
 - sqlite (better-sqlite3)
-- solana web3.js (for reward transactions)
 
 ## getting started
 
@@ -129,8 +138,8 @@ npm run dev     # terminal 2
   /config.ts             # configuration (loads from env vars)
 /server
   /index.js              # express api server
-  /db.js                 # sqlite database setup
-  /tips.db               # sqlite database (auto-generated)
+  /db.js                 # database setup
+  /tips.db               # database (auto-generated)
 /scripts
   /generate-platform-wallet.js  # generate platform wallet keypair
 /wallets
@@ -169,7 +178,7 @@ example flow:
 - tip #4-5: nothing
 - tip #6: reward again
 
-implementation: backend tracks tips in sqlite, counts per supporter->creator pair, sends reward tx on every 3rd. frontend shows animated notification w/ explorer link.
+implementation: backend tracks tips in sql db, counts per supporter->creator pair, sends reward tx on every 3rd. frontend shows animated notification w/ explorer link.
 
 ## supporter dashboard
 
