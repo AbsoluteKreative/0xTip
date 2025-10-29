@@ -1,7 +1,7 @@
 {
-  "name": "0xtip",
+  "name": "0xTip",
   "version": "1.0.0",
-  "description": "Support creators with Solana",
+  "description": "An Onchain Tipping Platform With Rewards For Creators And Supporters",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
