@@ -249,36 +249,9 @@ export default function ProfilePage() {
           </div>
         )}
 
-        {/* Recent Activity */}
-        {data.recent_tips.length > 0 && (
-          <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">recent tips</h2>
-            <div className="space-y-3">
-              {data.recent_tips.map((tip) => (
-                <div key={tip.id} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">{tip.amount_sol.toFixed(4)} SOL</p>
-                    <p className="text-xs text-gray-600">
-                      {new Date(tip.timestamp).toLocaleString()}
-                    </p>
-                  </div>
-                  <a
-                    href={`https://explorer.solana.com/tx/${tip.tx_signature}?cluster=devnet`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-purple-600 hover:underline"
-                  >
-                    view tx →
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Reward History */}
         {data.reward_history.length > 0 && (
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
             <h2 className="text-xl font-bold text-gray-900 mb-4">reward history</h2>
             <div className="space-y-3">
               {data.reward_history.map((reward) => (
@@ -299,6 +272,33 @@ export default function ProfilePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-green-600 hover:underline"
+                  >
+                    view tx →
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Recent Activity */}
+        {data.recent_tips.length > 0 && (
+          <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">recent tips</h2>
+            <div className="space-y-3">
+              {data.recent_tips.map((tip) => (
+                <div key={tip.id} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">{tip.amount_sol.toFixed(4)} SOL</p>
+                    <p className="text-xs text-gray-600">
+                      {new Date(tip.timestamp).toLocaleString()}
+                    </p>
+                  </div>
+                  <a
+                    href={`https://explorer.solana.com/tx/${tip.tx_signature}?cluster=devnet`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-purple-600 hover:underline"
                   >
                     view tx →
                   </a>
