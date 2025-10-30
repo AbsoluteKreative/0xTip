@@ -2,7 +2,7 @@
 
 An onchain tipping platform with rewards for creators and supporters.
 
-**Live demo env:** https://0xTip.fly.dev/
+**Live demo:** [0xTip.fly.dev](https://0xTip.fly.dev/)
 
 Submission for Solana Cypherpunk Hackathon - Colosseum (2025)
 
